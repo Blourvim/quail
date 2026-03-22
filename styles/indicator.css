@@ -1,0 +1,16 @@
+#quail-indicator {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 2px 8px;
+  font-family: monospace;
+  font-size: 12px;
+  font-weight: bold;
+  z-index: 2147483647;
+  pointer-events: none;
+}
+
+#quail-indicator[data-mode="normal"]  { background: #282828; color: #ebdbb2; }
+#quail-indicator[data-mode="insert"]  { background: #458588; color: #282828; }
+#quail-indicator[data-mode="hint"]    { background: #d79921; color: #282828; }
+#quail-indicator[data-mode="command"] { background: #98971a; color: #282828; }

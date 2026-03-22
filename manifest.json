@@ -3,10 +3,25 @@
   "name": "quail",
   "version": "0.1.0",
   "description": "A Vim-like keyboard interface for Firefox",
+  "permissions": [
+    "tabs",
+    "storage",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["content.js"]
+      "js": [
+        "content/indicator.js",
+        "content/content.js"
+      ],
+      "css": [
+        "styles/indicator.css"
+      ],
+      "run_at": "document_idle"
     }
   ]
 }
