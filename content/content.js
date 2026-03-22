@@ -1,21 +1,18 @@
 document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") { setMode("normal"); e.preventDefault(); }
 
   if (mode === "insert") {
-    if (e.key === "Escape") { setMode("normal"); e.preventDefault(); }
     return;
   }
 
   if (mode === "hint") {
-    e.preventDefault();
-    if (e.key === "Escape") { setMode("normal"); return; }
-    handleHintKey(e.key);
     return;
   }
 
   if (mode === "command") {
-    if (e.key === "Escape") { setMode("normal"); e.preventDefault(); }
     return;
   }
+
 
   if (mode == "normal") {
     e.preventDefault();
@@ -30,6 +27,7 @@ document.addEventListener("keydown", (e) => {
       // ing page navigations
       case "j": scrollBy({ top: 100 }); break;
       case "k": scrollBy({ top: -100 }); break;
+      case "r":location.reload();break;
       case "g": break;
       case "gg": break; //todo: this will need an input buffer system
       case "G": break;
