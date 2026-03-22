@@ -27,10 +27,10 @@ document.addEventListener("keydown", (e) => {
       // ing page navigations
       case "j": scrollBy({ top: 100 }); break;
       case "k": scrollBy({ top: -100 }); break;
-      case "r":location.reload();break;
+      case "r": location.reload(); break;
       case "g": break;
       case "gg": break; //todo: this will need an input buffer system
-      case "G": break;
+      case "G": window.scrollTo(0, document.body.scrollHeight); break;
 
       case "d": break;
       case "H": break;
