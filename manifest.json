@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "quail",
+  "version": "0.1.0",
+  "description": "A Vim-like keyboard interface for Firefox",
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
