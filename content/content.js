@@ -1,15 +1,18 @@
 document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") { setMode("normal"); e.preventDefault(); }
+  if (e.key === "Escape") { setMode("normal"); clearHints(); e.preventDefault(); }
 
   if (mode === "insert") {
     return;
   }
 
   if (mode === "hint") {
+    e.preventDefault();
+    handleHintKey(e.key);  
     return;
   }
 
   if (mode === "command") {
+    e.preventDefault();
     return;
   }
 
@@ -20,7 +23,7 @@ document.addEventListener("keydown", (e) => {
       // mode switches
       case "i": setMode("insert"); break;
       case ":": setMode("command"); break;
-      case "h": setMode("hint"); break;
+      case "f": startHints("click");break;
 
       // function keys :
       //
@@ -28,7 +31,6 @@ document.addEventListener("keydown", (e) => {
       case "j": scrollBy({ top: 100 }); break;
       case "k": scrollBy({ top: -100 }); break;
       case "r": location.reload(); break;
-      case "g": break;
       case "gg": break; //todo: this will need an input buffer system
       case "G": window.scrollTo(0, document.body.scrollHeight); break;
 
