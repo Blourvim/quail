@@ -1,0 +1,22 @@
+Quail
+Copyright (C) 2026 İ. Mert Yıldız
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published
+by the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+---
+
+This project is a derivative work of Tridactyl
+(https://github.com/tridactyl/tridactyl)
+Copyright (C) the Tridactyl authors
+Licensed under the Apache License, Version 2.0
+
+A copy of the Apache 2.0 license is included in LICENSES/tridactyl-apache2.txt.
+
+Changes made from the original:
+All code was written independently from scratch unless otherwise stated, however this is not a
+clean room implementation. The author had prior knowledge of Tridactyl's
+architecture and design before writing Quail. Core concepts are derived from
+Tridactyl's design.
