@@ -19,7 +19,8 @@
       "js": [
         "content/indicator.js",
         "content/content.js",
-        "content/hints.js"
+        "content/hints.js",
+        "content/selector_gen.js"
       ],
       "css": [
         "styles/indicator.css",
