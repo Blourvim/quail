@@ -66,9 +66,18 @@ function handleHintKey(key) {
   if (match) {
     match.el.focus();
     match.el.click();
-    setMode("normal");
-    clearHints();
-    return;
+
+    if (isTypable(match.el)) {
+      setMode("insert");
+      clearHints();
+      return;
+    } else {
+      setMode("normal");
+      clearHints();
+      return;
+
+    }
+
   }
 
   if (remaining === 0) {
@@ -77,7 +86,15 @@ function handleHintKey(key) {
     clearHints();
   }
 }
-
+function isTypable(el) {
+  if (el.tagName === "TEXTAREA") return true;
+  if (el.tagName === "INPUT") {
+    const blocked = ["button", "submit", "reset", "checkbox", "radio", "file", "hidden", "image", "range", "color"];
+    return !blocked.includes(el.type);
+  }
+  if (el.isContentEditable) return true;
+  return false;
+}
 function clearHints() {
   hintElements.forEach(h => h.div.remove());
   hintElements = [];
