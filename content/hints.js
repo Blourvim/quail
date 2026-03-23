@@ -8,6 +8,10 @@ const SITE_TARGETS = [
     selector: "a[href], button, .js-navigation-open, [role=button]",
   },
   {
+    url: "news.ycombinator.com",
+    selector: "a[href]:not([class]):not(.age a):not(.age > a)"
+  },
+  {
     url: "default",
     selector: "a[href], button, input:not([type=hidden]), select, textarea, [role=button], [role=link], [role=menuitem], [role=tab]"
   }
