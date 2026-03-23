@@ -1,14 +1,38 @@
+const SITE_TARGETS = [
+  {
+    url: "linkedin.com",
+    selector: "a[href], button, [role=button], [role=tab]"
+  },
+  {
+    url: "github.com",
+    selector: "a[href], button, .js-navigation-open, [role=button]",
+  },
+  {
+    url: "default",
+    selector: "a[href], button, input:not([type=hidden]), select, textarea, [role=button], [role=link], [role=menuitem], [role=tab]"
+  }
+];
+
+
 const HINT_CHARS = "fasdhjklqwertyuıozxcvbmn";
 let hintElements = [];
 let hintInput = "";
 let hintAction = null;
+function targetSelectors(url) {
 
-function startHints() {
+  let target = SITE_TARGETS.find((website) => url.includes(website.url));
+
+  if (target === undefined) {
+    return SITE_TARGETS[SITE_TARGETS.length - 1].selector;
+  } else {
+
+    return target.selector
+  }
+}
+
+function startHints(url) {
   clearHints();
-  const targets = Array.from(document.querySelectorAll(
-    "a[href], button, input:not([type=hidden]), select, textarea, [role=button], [role=link], [role=menuitem], [role=tab]"
-  ))
-
+  const targets = Array.from(document.querySelectorAll(targetSelectors(url)));
   if (targets.length === 0) return;
   const labels = generateLabels(targets.length);
   hintInput = "";

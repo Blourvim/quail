@@ -7,7 +7,7 @@ document.addEventListener("keydown", (e) => {
 
   if (mode === "hint") {
     e.preventDefault();
-    handleHintKey(e.key);  
+    handleHintKey(e.key);
     return;
   }
 
@@ -23,7 +23,7 @@ document.addEventListener("keydown", (e) => {
       // mode switches
       case "i": setMode("insert"); break;
       case ":": setMode("command"); break;
-      case "f": startHints("click");break;
+      case "f": startHints(window.location.href); break;
 
       // function keys :
       //
