@@ -35,7 +35,7 @@ document.addEventListener("keydown", (e) => {
       case "G": window.scrollTo(0, document.body.scrollHeight); break;
 
       case "d": break;
-      case "H": break;
+      case "H": history.go(-1); break;
       case "b": break;
       case "o": break;
     }
